@@ -53,7 +53,7 @@ const Shoes = () => {
 
   // Reusable Button component
   const Button = ({ children, onClick, className }: { children: React.ReactNode; onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void; className: string }) => (
-    <button className={`bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold p-2 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out ${className}`} onClick={onClick}>
+    <button className={`bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold  rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out ${className}`} onClick={onClick}>
       {children}
     </button>
   );
@@ -84,6 +84,9 @@ const Shoes = () => {
                 <p className="text-blue-500 mt-2 font-bold">
                   {product.price ? `$${product.price}` : "Price not available"}
                 </p>
+
+                <p className="text-sm text-red-600 mb-2">Category: {product.category}</p>
+                <p className="text-sm text-green-600 mb-2">Status: {product.status}</p>
                 <div className="flex w-full justify-between items-center mt-4 gap-4">
                   <Button onClick={(e) => handleAddToCart(e, product)} className="p-2">Add To Cart</Button>
                   <Button className="py-2">View Detail</Button>

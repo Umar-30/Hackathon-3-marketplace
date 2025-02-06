@@ -1,6 +1,11 @@
 
 
+import { ReactNode } from 'react';
+
 export  interface Product{
+    discountPercentage: number;
+    name: string;
+    color: ReactNode | Iterable<ReactNode>;
     id: any;
     _id : string;
     productName : string;
@@ -20,4 +25,8 @@ export  interface Product{
         current : string;
     };
     inventory : number;
+    rating: {
+        rate: number;
+        count: number;
+        };
 }

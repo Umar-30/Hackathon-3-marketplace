@@ -1,10 +1,9 @@
-
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Topheader from './components/Topheader';
-import { SearchProvider } from './context/SearchContext';
+import Topheader from "./components/Topheader";
+import { SearchProvider } from "./context/SearchContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,14 +32,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <SearchProvider>
-        <Topheader />
 
-        <Navbar />
-       
-        <main>
-        {children}
-        
-        </main>
+          <Topheader />
+
+          <Navbar />
+
+          <main>{children}</main>
         </SearchProvider>
       </body>
     </html>

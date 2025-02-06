@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -39,12 +40,13 @@ const Hero = () => {
           >
             Notify Me
           </button>
+          <Link href="/newFeature">
           <button
             className="bg-black text-white py-2 px-8 rounded-full text-sm hover:bg-gray-800 transition-all"
             aria-label="Shop Nike Air Max Pulse"
           >
             Shop Air Max
-          </button>
+          </button></Link>
         </div>
       </div>
     </div>

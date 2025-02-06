@@ -15,9 +15,11 @@ async function getProduct(slug: string): Promise<Product> {
       _id,
       productName,
       price,
-      _type,
+      Category,
       image,
+      Status,
       description,
+      color,
       }`,{slug}
   ) 
 }
@@ -43,10 +45,15 @@ export default async function ProductPage({params}: ProductPageProps) {
           <h1 className="text-3xl font-bold font-serif">{product.productName}</h1>
           <p className="text-blue-500 font-bold text-2xl">{product.price ? `$${product.price}` : "Price not available"}</p>
           <p className="text-gray-700">{product.description}</p>
-          <p>{product.category}</p>
+          {/* <p className="text-sm text-red-600 mb-2">Category: {product.category ? `${product.category}`: "category is not available "}</p>
+          <p className="text-sm text-green-600 mb-2">Status: {product.status}</p>
+          <p className="text-sm text-green-600 mb-2">Color: {product.color}</p> */}
           
-    <Link href={'/cart'}> <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-2 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
-    >Add to Cart</button></Link>
+    <Link href={'/cart'}>
+      <button className="bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold py-2 px-2 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out">
+        Add to Cart
+      </button>
+    </Link>
 
         </div>
       </div>

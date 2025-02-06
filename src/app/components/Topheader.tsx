@@ -27,11 +27,12 @@ const Topheader = () => {
             Help
           </Link>
           <span>|</span>
-          <Link href="#" className="hover:text-gray-500">
+          <Link href="/Joinus
+          " className="hover:text-gray-500">
             Join Us
           </Link>
           <span>|</span>
-          <Link href="/singUp" className="hover:text-gray-500">
+          <Link href="/SingUp" className="hover:text-gray-500">
             Sign Up
           </Link>
         </div>
