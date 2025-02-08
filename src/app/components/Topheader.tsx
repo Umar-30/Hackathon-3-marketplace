@@ -32,7 +32,7 @@ const Topheader = () => {
             Join Us
           </Link>
           <span>|</span>
-          <Link href="/SingUp" className="hover:text-gray-500">
+          <Link href="/singUp" className="hover:text-gray-500">
             Sign Up
           </Link>
         </div>

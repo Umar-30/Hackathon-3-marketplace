@@ -27,10 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+
+
         <SearchProvider>
 
           <Topheader />
@@ -41,5 +44,6 @@ export default function RootLayout({
         </SearchProvider>
       </body>
     </html>
+
   );
 }

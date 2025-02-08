@@ -1,24 +1,12 @@
-// import { NextRequest, NextResponse } from 'next/server';
-// import { cookies } from 'next/headers';
+import { clerkMiddleware } from "@clerk/nextjs/server";
 
-// export function middleware(req: NextRequest) {
-//     const token = cookies().get('token');
+export default clerkMiddleware();
 
-//     const isAuthenticated = token?.value === 'true';
-//     const { pathname } = req.nextUrl;
-
-//     if (!isAuthenticated && pathname !== '/login') {
-//         return NextResponse.redirect(new URL('/login', req.url));
-//     }
-
-//     if (isAuthenticated && pathname === '/login') {
-//         return NextResponse.redirect(new URL('/', req.url));
-//     }
-
-//     return NextResponse.next();
-// }
-
-// export const config = {
-//     matcher: ['/login', '/'],
-// };
-
+export const config = {
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
+  ],
+};
